@@ -1,0 +1,11 @@
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #ED2553;
+    font-weight: 300;
+    width: 100%;
+    float: left;
+    transition: 300ms cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+    -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+}

@@ -1,0 +1,21 @@
+.table {
+    margin-top: 100px;
+    margin-left: 60px;
+    width: 90%;
+    border: 12px  #ED2553;
+}
+
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #ED2553;
+    border: 3px solid #ED2553;
+    color: white;
+}
+
+.table td {
+    border: 1px solid #ED2553;
+    background: #ffffff;
+    padding: 5px;
+    color: #ED2553;
+}
