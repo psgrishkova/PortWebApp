@@ -14,6 +14,6 @@ public class DeleteShipServlet extends HttpServlet {
         Long idTemp = Long.parseLong(request.getParameter("id"));
         System.out.println(idTemp);
         ShipService.delete(idTemp);
-        response.sendRedirect("/PortWebApp/AllVoyagesServlet");
+        response.sendRedirect("/PortWebApp/AllShipsServlet");
     }
 }

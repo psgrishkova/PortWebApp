@@ -14,7 +14,7 @@
 
         ShipService.setShip(new Ship(id, num, name, capacity));
 
-        response.sendRedirect("/PortWebApp/AllVoyagesServlet");
+        response.sendRedirect("/PortWebApp/AllShipsServlet");
     %>
 </body>
 </html>

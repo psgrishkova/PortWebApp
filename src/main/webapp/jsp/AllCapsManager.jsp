@@ -10,16 +10,16 @@
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
     <link rel="stylesheet" href="<c:url value='/resources/css/Ship.css' />"/>
-    <link rel="stylesheet" href="<c:url value='/resources/css/AllVoyages.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/AllShips.css' />"/>
     <link rel="stylesheet" href="<c:url value='/resources/css/Nav.css' />"/>
 </head>
 
 <body>
 <div id="navbar">
     <ul>
-        <li><a class="a" href="#">Routes</a></li>
+        <li><a class="a" href="AllRoutesServlet">Routes</a></li>
         <li><a class="a" href="AllCapsServlet">Caps</a></li>
-        <li><a class="a" href="AllVoyagesServlet" >Ships</a></li>
+        <li><a class="a" href="AllShipsServlet" >Ships</a></li>
     </ul>
 </div>
 <div>

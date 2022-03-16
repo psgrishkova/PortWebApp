@@ -16,7 +16,7 @@
     Ship s = new Ship(0L, num, name, capacity);
     ShipService.add(s);
 
-    response.sendRedirect("/PortWebApp/AllVoyagesServlet");
+    response.sendRedirect("/PortWebApp/AllShipsServlet");
 %>
 </body>
 </html>
