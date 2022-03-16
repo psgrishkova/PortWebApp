@@ -36,7 +36,7 @@ public class CapService {
         }
     }
 
-    public static void setShip(Cap s){
+    public static void setCap(Cap s){
         PreparedStatement ps = DBConnection.getPreparedStatement(
                 "Update captain set name=?, phone=?"+"where id=?"
         );
