@@ -1,19 +1,19 @@
 package servlets;
 
 import services.CapService;
-import services.ShipService;
+import services.RouteService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AllCapsServlet", value = "/AllCapsServlet")
-public class AllCapsServlet extends HttpServlet {
+@WebServlet(name = "AllRoutesServlet", value = "/AllRoutesServlet")
+public class AllRoutesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("All", CapService.getAll());
-        RequestDispatcher rd = request.getRequestDispatcher("jsp/AllCapsManager.jsp");
+        request.setAttribute("All", RouteService.getAll());
+        RequestDispatcher rd = request.getRequestDispatcher("jsp/AllRoutesAManager.jsp");
         rd.forward(request, response);
     }
 }

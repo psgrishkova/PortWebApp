@@ -9,12 +9,11 @@
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
     <link rel="stylesheet" href="<c:url value='/resources/css/Ship.css' />"/>
-    <link rel="stylesheet" href="<c:url value='/resources/css/AllVoyages.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/AllShips.css' />"/>
     <link rel="stylesheet" href="<c:url value='/resources/css/EditShip.css' />"/>
 </head>
 
 <body>
-
 <div class="materialContainer">
     <div class="box">
         <c:forEach items="${findCapById}" var="p">

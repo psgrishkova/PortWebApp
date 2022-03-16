@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>EditShip</title>
+    <title>EditRoute</title>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
@@ -17,9 +17,9 @@
 
 <div class="materialContainer">
     <div class="box">
-        <c:forEach items="${findShipById}" var="p">
-            <form action="jsp/EditShipManager.jsp" method="post">
-                <div class="title">Edit ship</div>
+        <c:forEach items="${findRouteById}" var="p">
+            <form action="jsp/EditRouteManager.jsp" method="post">
+                <div class="title">Edit route</div>
 
                 <input name="id" type="hidden" value="${p.id}">
 
@@ -30,16 +30,16 @@
                 <label for="name">Name</label>
 
                 <div class="input">
-                    <input type="text" name="num" id="num" value="${p.regNumber}">
+                    <input type="text" name="from" id="from" value="${p.from}">
                     <span class="spin"></span>
                 </div>
-                <label for="num">Registration number</label>
+                <label for="from">From</label>
 
                 <div class="input">
-                    <input type="number" name="capacity" id="capacity" min="4" max="50" onkeypress="return false"
-                           value="${p.capacity}">
+                    <input type="text" name="to" id="to"
+                           value="${p.to}">
                 </div>
-                <label for="capacity">Capacity</label>
+                <label for="to">To</label>
                 <div class="button login">
                     <button type="submit"><span>GO</span> <i class="fa fa-check"></i></button>
                 </div>
