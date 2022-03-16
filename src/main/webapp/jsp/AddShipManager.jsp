@@ -9,13 +9,13 @@
 </head>
 <body>
 <%
-  /*  String name = request.getParameter("name");
+    String name = request.getParameter("name");
     String num = request.getParameter("num");
     int capacity = Integer.parseInt(request.getParameter("capacity"));
 
-    Ship s = new Ship(num, name, capacity);
+    Ship s = new Ship(0L, num, name, capacity);
     ShipService.add(s);
-*/
+
     response.sendRedirect("/PortWebApp/AllVoyagesServlet");
 %>
 </body>
