@@ -5,15 +5,13 @@ import java.time.LocalDateTime;
 
 public class Voyage {
     private Long id;
-    private Long acc_id;
     private Long capId;
     private Long routeId;
     private Long shipId;
     private LocalDateTime date;
 
-    public Voyage(Long id, Long acc_id, Long capId, Long routeId, Long shipId, LocalDateTime date) {
+    public Voyage(Long id, Long capId, Long routeId, Long shipId, LocalDateTime date) {
         this.id = id;
-        this.acc_id = acc_id;
         this.capId = capId;
         this.routeId = routeId;
         this.shipId = shipId;
@@ -34,14 +32,6 @@ public class Voyage {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getAcc_id() {
-        return acc_id;
-    }
-
-    public void setAcc_id(Long acc_id) {
-        this.acc_id = acc_id;
     }
 
     public Long getCapId() {

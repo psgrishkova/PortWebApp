@@ -14,7 +14,7 @@
     Long accId=1L;
     LocalDateTime date = LocalDateTime.parse(request.getParameter("date"));
 
-    Voyage s = new Voyage(0L, accId, capId, routeId, shipId, date);
+    Voyage s = new Voyage(0L, capId, routeId, shipId, date);
     VoyageService.add(s);
 
     response.sendRedirect("/PortWebApp/AllVoyagesServlet");
