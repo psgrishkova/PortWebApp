@@ -1,5 +1,9 @@
-package models;
+package dto;
 
+import models.Cap;
+import models.Route;
+import models.Ship;
+import models.Voyage;
 import services.CapService;
 import services.RouteService;
 import services.ShipService;

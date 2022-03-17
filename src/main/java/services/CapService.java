@@ -2,7 +2,6 @@ package services;
 
 import db.DBConnection;
 import models.Cap;
-import models.Ship;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
