@@ -14,19 +14,24 @@
 </head>
 
 <body>
+<c:if test="${err!=null}">
+    <script>
+        prompt("Check your data", "${err}");
+    </script>
+</c:if>
 <div class="materialContainer">
     <div class="box">
-        <form action="jsp/AddVoyageManager.jsp" method="post">
+        <form action="/PortWebApp/AddVoyageServlet" method="post">
             <div class="title">Add voyage</div>
-                <div>
-                    <label for="cap">Captain</label>
-                    <select name="cap" id="cap">
-                        <c:forEach items="${getAllCaps}" var="c">
-                            <option value="${c.id}">${c.name}</option>
-                        </c:forEach>
-                    </select>
-                    <span class="spin"></span>
-                </div>
+            <div>
+                <label for="cap">Captain</label>
+                <select name="cap" id="cap">
+                    <c:forEach items="${getAllCaps}" var="c">
+                        <option value="${c.id}">${c.name}</option>
+                    </c:forEach>
+                </select>
+                <span class="spin"></span>
+            </div>
             <div>
                 <label for="ship">Ship</label>
                 <select name="ship" id="ship">
@@ -47,12 +52,13 @@
                 <span class="spin"></span>
             </div>
 
-            <div  class="input">
-                <input type="datetime-local" name="date" id="date">
+            <div class="input">
+                <input type="datetime-local" name="date" id="date" required>
             </div>
 
             <div class="button login">
-                <button type="submit"><span>GO</span> <i class="fa fa-check"></i></button>
+                <button style="width: 50%" type="submit">GO</button>
+                <button style="width: 50%" onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllVoyagesServlet';">Cancel</button>
             </div>
         </form>
 

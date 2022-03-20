@@ -1,21 +1,20 @@
-package servlets;
+package servlets.cap;
+
 
 import services.CapService;
-import services.ShipService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "EditCapServlet", value = "/edit_cap")
-public class EditCapServlet extends HttpServlet {
+@WebServlet(name = "DeleteCapServlet", value = "/delete_cap")
+public class DeleteCapServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long idTemp = Long.parseLong(request.getParameter("id"));
         System.out.println(idTemp);
-        request.setAttribute("findCapById", CapService.findCapById(idTemp));
-        RequestDispatcher rd = request.getRequestDispatcher("pages/EditCap.jsp");
-        rd.forward(request, response);
+        CapService.delete(idTemp);
+        response.sendRedirect("/PortWebApp/AllCapsServlet");
     }
 }

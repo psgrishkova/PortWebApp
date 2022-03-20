@@ -14,34 +14,41 @@
 </head>
 
 <body>
-
+<c:if test="${err!=null}">
+    <script>
+        prompt("Check your data", "${err}");
+    </script>
+</c:if>
 <div class="materialContainer">
     <div class="box">
         <c:forEach items="${findShipById}" var="p">
-            <form action="jsp/EditShipManager.jsp" method="post">
+            <form action="edit_ship?id=${p.id}" method="post">
                 <div class="title">Edit ship</div>
 
-                <input name="id" type="hidden" value="${p.id}">
+                <input name="id" type="hidden" value="${p.id}" required>
 
                 <div class="input">
-                    <input type="text" name="name" id="name" value="${p.name}">
+                    <input type="text" name="name" id="name" value="${p.name}" required>
                     <span class="spin"></span>
                 </div>
                 <label for="name">Name</label>
 
                 <div class="input">
-                    <input type="text" name="num" id="num" value="${p.regNumber}">
+                    <input type="text" name="num" id="num" value="${p.regNumber}" required
+                           placeholder="AA000A00" pattern="[A-Z]{2}[0-9]{3}[A-Z]{1}[0-9]{2,3}"
+                    >
                     <span class="spin"></span>
                 </div>
                 <label for="num">Registration number</label>
 
                 <div class="input">
                     <input type="number" name="capacity" id="capacity" min="4" max="50" onkeypress="return false"
-                           value="${p.capacity}">
+                           value="${p.capacity}" required>
                 </div>
                 <label for="capacity">Capacity</label>
                 <div class="button login">
-                    <button type="submit"><span>GO</span> <i class="fa fa-check"></i></button>
+                    <button style="width: 50%" type="submit">GO</button>
+                    <button style="width: 50%" onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllShipsServlet';">Cancel</button>
                 </div>
             </form>
         </c:forEach>

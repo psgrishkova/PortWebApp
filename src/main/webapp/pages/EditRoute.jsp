@@ -9,39 +9,44 @@
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
     <link rel="stylesheet" href="<c:url value='/resources/css/Ship.css' />"/>
-    <link rel="stylesheet" href="<c:url value='/css/AllShips.css' />"/>
+    <link rel="stylesheet" href="<c:url value='../resources/css/AllShips.css' />"/>
     <link rel="stylesheet" href="<c:url value='/resources/css/EditShip.css' />"/>
 </head>
 
 <body>
-
+<c:if test="${err!=null}">
+    <script>
+        prompt("Check your data", "${err}");
+    </script>
+</c:if>
 <div class="materialContainer">
     <div class="box">
         <c:forEach items="${findRouteById}" var="p">
-            <form action="jsp/EditRouteManager.jsp" method="post">
+            <form action="edit_route?id=${p.id}" method="post">
                 <div class="title">Edit route</div>
 
-                <input name="id" type="hidden" value="${p.id}">
+                <input name="id" type="hidden" value="${p.id}" required>
 
                 <div class="input">
-                    <input type="text" name="name" id="name" value="${p.name}">
+                    <input type="text" name="name" id="name" value="${p.name}" required>
                     <span class="spin"></span>
                 </div>
                 <label for="name">Name</label>
 
                 <div class="input">
-                    <input type="text" name="from" id="from" value="${p.from}">
+                    <input type="text" name="from" id="from" value="${p.from}"required>
                     <span class="spin"></span>
                 </div>
                 <label for="from">From</label>
 
                 <div class="input">
                     <input type="text" name="to" id="to"
-                           value="${p.to}">
+                           value="${p.to}" required>
                 </div>
                 <label for="to">To</label>
                 <div class="button login">
-                    <button type="submit"><span>GO</span> <i class="fa fa-check"></i></button>
+                    <button style="width: 50%" type="submit">GO</button>
+                    <button style="width: 50%" onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllRoutesServlet';">Cancel</button>
                 </div>
             </form>
         </c:forEach>

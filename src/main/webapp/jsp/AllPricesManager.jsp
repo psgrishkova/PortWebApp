@@ -15,35 +15,35 @@
 
 <body>
 <div style="height: 100%; overflow:auto;">
-<div id="navbar">
-    <ul>
-        <li><a class="a" href="AllRoutesServlet">Routes</a></li>
-        <li><a class="a" href="AllCapsServlet">Caps</a></li>
-        <li><a class="a" href="AllShipsServlet">Ships</a></li>
-    </ul>
-</div>
+    <div id="navbar">
+        <ul>
+            <li><a class="a" href="AllRoutesServlet">Routes</a></li>
+            <li><a class="a" href="AllCapsServlet">Caps</a></li>
+            <li><a class="a" href="AllShipsServlet" >Ships</a></li>
+            <li><a class="a" href="AllVoyagesServlet" >Voyages</a></li>
+            <li><a class="a" href="AllPricesServlet" >Prices</a></li>
+        </ul>
+    </div>
 <div >
     <div class="button login">
-        <button onclick="window.location.href = 'http://localhost:8080/PortWebApp/add_price?id=0';"
+        <button onclick="window.location.href = 'http://localhost:8080/PortWebApp/AddPriceServlet';"
                 style="background-color: white">Add new price list</button>
     </div>
     <c:forEach items="${All}" var="s">
         <div style="margin-bottom: 30px;">
             <table class="table">
-                <caption style="font-size: 25px; color: white">Price List #${s.id}<br>
+                <caption style="font-size: 25px; color: white">Route : ${s.name}<br>
                     <a style="color: white" href="delete_price?id=${s.id}">Delete price list</a><br>
-                    <a style="color: white" href="add_price?id=${s.id}">Add new price at this price list</a>
                 </caption>
+
                 <tr>
                     <th width="20%">Category</th>
                     <th width="20%">Price</th>
-                    <th width="40%">Route</th>
                 </tr>
-                <c:forEach items="${s.priceList}" var="p">
+                    <c:forEach items="${s.priceList}" var="p">
                     <tr>
                         <td>${p.category}</td>
                         <td>${p.price}</td>
-                        <td>${p.route.name}</td>
                     </tr>
                 </c:forEach>
             </table>
