@@ -20,11 +20,13 @@
         <li><a class="a" href="AllRoutesServlet">Routes</a></li>
         <li><a class="a" href="AllCapsServlet">Caps</a></li>
         <li><a class="a" href="AllShipsServlet" >Ships</a></li>
+        <li><a class="a" href="AllVoyagesServlet" >Voyages</a></li>
+        <li><a class="a" href="AllPricesServlet" >Prices</a></li>
     </ul>
 </div>
 <div>
     <div class="button login">
-        <button onclick="window.location.href = 'http://localhost:8080/PortWebApp/pages/AddShip.html';" style="background-color: white"><span>Add new ship</span> <i class="fa fa-check"></i></button>
+        <button onclick="window.location.href = 'http://localhost:8080/PortWebApp/AddShipServlet';" style="background-color: white"><span>Add new ship</span> <i class="fa fa-check"></i></button>
     </div>
     <table class="table">
         <tr>
@@ -41,8 +43,8 @@
                 <td>${s.regNumber}</td>
                 <td>${s.name}</td>
                 <td>${s.capacity}</td>
-                <td><a href="edit?id=${s.id}">Edit</a></td>
-                <td><a href="delete?id=${s.id}">Delete</a></td>
+                <td><a href="edit_ship?id=${s.id}">Edit</a></td>
+                <td><a href="delete_ship?id=${s.id}">Delete</a></td>
 
             </tr>
         </c:forEach>

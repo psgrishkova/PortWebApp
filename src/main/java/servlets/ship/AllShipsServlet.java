@@ -1,4 +1,5 @@
-package servlets;
+package servlets.ship;
+
 
 import services.ShipService;
 
@@ -17,10 +18,5 @@ public class AllShipsServlet extends HttpServlet {
         request.setAttribute("All", ShipService.getAll());
         RequestDispatcher rd = request.getRequestDispatcher("jsp/AllShipsManager.jsp");
         rd.forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

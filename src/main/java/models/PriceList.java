@@ -6,14 +6,25 @@ import java.util.List;
 
 public class PriceList {
     private Long id;
+    private String name;
     private List<PriceDto> priceList;
 
-    public PriceList(Long id, List<PriceDto> priceList) {
+
+    public PriceList(Long id, String name, List<PriceDto> priceList) {
         this.id = id;
+        this.name=name;
         this.priceList = priceList;
     }
 
     public PriceList() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getId() {

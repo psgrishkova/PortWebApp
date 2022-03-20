@@ -4,9 +4,9 @@ import models.Cap;
 import models.Route;
 import models.Ship;
 import models.Voyage;
-import services.CapService;
-import services.RouteService;
-import services.ShipService;
+import repositories.CapRepository;
+import repositories.RouteRepository;
+import repositories.ShipRepository;
 
 import java.time.LocalDateTime;
 
@@ -32,9 +32,9 @@ public class VoyageDto {
         VoyageDto r = new VoyageDto();
         try {
             r.setId(v.getId());
-            r.setCap(CapService.findCapById(v.getCapId()).get(0));
-            r.setRoute(RouteService.findRouteById(v.getRouteId()).get(0));
-            r.setShip(ShipService.findShipById(v.getShipId()).get(0));
+            r.setCap(CapRepository.findCapById(v.getCapId()).get(0));
+            r.setRoute(RouteRepository.findRouteById(v.getRouteId()).get(0));
+            r.setShip(ShipRepository.findShipById(v.getShipId()).get(0));
             r.setDate(v.getDate());
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,4 +1,4 @@
-package servlets;
+package servlets.voyage;
 
 import services.VoyageService;
 

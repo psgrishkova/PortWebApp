@@ -20,11 +20,13 @@
         <li><a class="a" href="AllRoutesServlet">Routes</a></li>
         <li><a class="a" href="AllCapsServlet">Caps</a></li>
         <li><a class="a" href="AllShipsServlet" >Ships</a></li>
+        <li><a class="a" href="AllVoyagesServlet" >Voyages</a></li>
+        <li><a class="a" href="AllPricesServlet" >Prices</a></li>
     </ul>
 </div>
 <div>
     <div class="button login">
-        <button onclick="window.location.href = 'http://localhost:8080/PortWebApp/pages/AddRoute.html';" style="background-color: white"><span>Add new route</span> <i class="fa fa-check"></i></button>
+        <button onclick="window.location.href = 'http://localhost:8080/PortWebApp/AddRouteServlet';" style="background-color: white"><span>Add new route</span> <i class="fa fa-check"></i></button>
     </div>
     <table class="table">
         <tr>

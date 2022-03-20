@@ -2,19 +2,17 @@ package dto;
 
 import models.Price;
 import models.Route;
-import services.RouteService;
+import repositories.RouteRepository;
 
 public class PriceDto implements Comparable{
     private Long id;
     private String category;
     private double price;
-    private Route route;
 
-    public PriceDto(Long id, String category, double price, Route route){
+    public PriceDto(Long id, String category, double price){
         this.id = id;
         this.category = category;
         this.price = price;
-        this.route = route;
     }
 
     public PriceDto() {
@@ -26,7 +24,6 @@ public class PriceDto implements Comparable{
             priceDto.setId(price.getId());
             priceDto.setCategory(price.getCategory());
             priceDto.setPrice(price.getPrice());
-            priceDto.setRoute(RouteService.findRouteById(price.getRouteId()).get(0));
         }
         catch (Exception e){e.printStackTrace();}
         finally {
@@ -56,14 +53,6 @@ public class PriceDto implements Comparable{
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(Route route) {
-        this.route = route;
     }
 
     @Override

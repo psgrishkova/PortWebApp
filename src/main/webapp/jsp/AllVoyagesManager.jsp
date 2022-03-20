@@ -21,7 +21,9 @@
     <ul>
         <li><a class="a" href="AllRoutesServlet">Routes</a></li>
         <li><a class="a" href="AllCapsServlet">Caps</a></li>
-        <li><a class="a" href="AllShipsServlet">Ships</a></li>
+        <li><a class="a" href="AllShipsServlet" >Ships</a></li>
+        <li><a class="a" href="AllVoyagesServlet" >Voyages</a></li>
+        <li><a class="a" href="AllPricesServlet" >Prices</a></li>
     </ul>
 </div>
 <div>
@@ -56,8 +58,8 @@
                     Route: ${s.route.from} - ${s.route.to}<br>
                 </td>
                 <td>${s.date}</td>
-                <td><a href="edit?id=${s.id}">Edit</a></td>
-                <td><a href="delete?id=${s.id}">Delete</a></td>
+                <td><a href="edit_voyage?id=${s.id}">Edit</a></td>
+                <td><a href="delete_voyage?id=${s.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>

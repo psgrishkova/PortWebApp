@@ -1,6 +1,6 @@
-package servlets;
+package servlets.route;
 
-import services.CapService;
+import repositories.RouteRepository;
 import services.RouteService;
 
 import javax.servlet.*;
@@ -12,9 +12,13 @@ import java.io.IOException;
 public class DeleteRouteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long idTemp = Long.parseLong(request.getParameter("id"));
-        System.out.println(idTemp);
-        RouteService.delete(idTemp);
-        response.sendRedirect("/PortWebApp/AllRoutesServlet");
+        try {
+            Long idTemp = Long.parseLong(request.getParameter("id"));
+            RouteService.delete(idTemp);
+            response.sendRedirect("/PortWebApp/AllRoutesServlet");
+        }
+        catch (Exception e){
+            //logger
+        }
     }
 }

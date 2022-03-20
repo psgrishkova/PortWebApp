@@ -1,4 +1,6 @@
-package servlets;
+package servlets.price;
+
+
 
 import services.PriceService;
 

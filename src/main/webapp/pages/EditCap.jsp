@@ -14,31 +14,44 @@
 </head>
 
 <body>
+<c:if test="${err!=null}">
+    <script>
+        prompt("Check your data", "${err}");
+    </script>
+</c:if>
 <div class="materialContainer">
     <div class="box">
         <c:forEach items="${findCapById}" var="p">
-            <form action="jsp/EditCapManager.jsp" method="post">
+            <form action="edit_cap?id=${p.id}" method="post">
                 <div class="title">Edit cap</div>
 
-                <input name="id" type="hidden" value="${p.id}">
+                <input name="id" type="hidden" value="${p.id}" required>
 
                 <div class="input">
-                    <input type="text" name="name" id="name" value="${p.name}">
+                    <input type="text" name="name" id="name" value="${p.name}" required>
                     <span class="spin"></span>
                 </div>
                 <label for="name">Name</label>
 
                 <div class="input">
                     <input type="tel" name="tel" id="tel"
-                           value="${p.phone}">
+                           value="${p.phone}" required
+                           value="+7(___)___-__-__"
+                           pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                           placeholder="+7(___)___-__-__"
+                    >
                 </div>
                 <label for="tel">Phone</label>
                 <div class="button login">
-                    <button type="submit"><span>GO</span> <i class="fa fa-check"></i></button>
+                    <button style="width: 50%" type="submit">GO</button>
+                    <button style="width: 50%" onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllCapsServlet';">Cancel</button>
                 </div>
             </form>
         </c:forEach>
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    <%@include file="../js/PhoneNumPattern.js"%>
+</script>
 </html>
