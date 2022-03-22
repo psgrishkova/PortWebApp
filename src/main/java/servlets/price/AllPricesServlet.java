@@ -1,7 +1,6 @@
 package servlets.price;
 
 
-
 import services.PriceService;
 
 import javax.servlet.RequestDispatcher;
@@ -17,7 +16,7 @@ public class AllPricesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("All", PriceService.getAllPriceLists());
-        RequestDispatcher rd = request.getRequestDispatcher("jsp/AllPricesManager.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("pages/AllPricesManager.jsp");
         rd.forward(request, response);
     }
 }

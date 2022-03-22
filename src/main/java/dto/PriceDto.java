@@ -1,15 +1,13 @@
 package dto;
 
 import models.Price;
-import models.Route;
-import repositories.RouteRepository;
 
-public class PriceDto implements Comparable{
+public class PriceDto implements Comparable {
     private Long id;
     private String category;
     private double price;
 
-    public PriceDto(Long id, String category, double price){
+    public PriceDto(Long id, String category, double price) {
         this.id = id;
         this.category = category;
         this.price = price;
@@ -18,15 +16,15 @@ public class PriceDto implements Comparable{
     public PriceDto() {
     }
 
-    public static PriceDto toPriceDto(Price price){
-        PriceDto priceDto=new PriceDto();
+    public static PriceDto toPriceDto(Price price) {
+        PriceDto priceDto = new PriceDto();
         try {
             priceDto.setId(price.getId());
             priceDto.setCategory(price.getCategory());
             priceDto.setPrice(price.getPrice());
-        }
-        catch (Exception e){e.printStackTrace();}
-        finally {
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             return priceDto;
         }
     }
@@ -57,6 +55,6 @@ public class PriceDto implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        return (int) (this.id-((PriceDto)o).getId());
+        return (int) (this.id - ((PriceDto) o).getId());
     }
 }

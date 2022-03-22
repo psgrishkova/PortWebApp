@@ -8,7 +8,7 @@
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
-    <link rel="stylesheet" href="<c:url value='/resources/css/Ship.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/General.css' />"/>
 </head>
 <body>
 <c:if test="${err!=null}">
@@ -44,7 +44,7 @@
 </div>
 <script src='<c:url value="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"/> '></script>
 <script type="text/javascript">
-    <%@include file="../js/Ship.js"%>
+    <%@include file="../js/Effects.js"%>
 </script>
 <script type="text/javascript">
     <%@include file="../js/PhoneNumPattern.js"%>

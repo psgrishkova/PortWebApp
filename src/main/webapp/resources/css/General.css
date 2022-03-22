@@ -1,3 +1,8 @@
+.scroll div{
+    height: 100%;
+    overflow: auto;
+}
+
 .box {
     position: relative;
     top: 0;
@@ -68,7 +73,7 @@
 
 .input,
 .input label,
-.input input,z
+.input input, z
 .input .spin,
 .button,
 .button button .button.login button i.fa,

@@ -1,6 +1,5 @@
 package models;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class Voyage {
@@ -15,7 +14,7 @@ public class Voyage {
         this.capId = capId;
         this.routeId = routeId;
         this.shipId = shipId;
-        this.date=date;
+        this.date = date;
     }
 
     public LocalDateTime getDate() {

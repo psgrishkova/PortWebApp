@@ -3,9 +3,12 @@ package servlets.ship;
 import models.Ship;
 import services.ShipService;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "AddShipServlet", value = "/AddShipServlet")
@@ -27,7 +30,7 @@ public class AddShipServlet extends HttpServlet {
             ShipService.add(s);
 
             response.sendRedirect("/PortWebApp/AllShipsServlet");
-        }catch (Exception e){
+        } catch (Exception e) {
             request.setAttribute("err", e.getMessage());
             doGet(request, response);
         }

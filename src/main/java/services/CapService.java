@@ -7,8 +7,9 @@ import repositories.CapRepository;
 import java.util.List;
 
 public class CapService {
-    public static void add(Cap cap){
-        if(findCapByName(cap.getName()).stream().count()!=0) throw new DuplicateDataException("Сap with that name already exists");
+    public static void add(Cap cap) {
+        if (findCapByName(cap.getName()).stream().count() != 0)
+            throw new DuplicateDataException("Сap with that name already exists");
         CapRepository.add(cap);
     }
 
@@ -16,8 +17,9 @@ public class CapService {
         CapRepository.delete(id);
     }
 
-    public static void update(Cap cap){
-        if(!findCapById(cap.getId()).get(0).getName().equals(cap.getName()) && findCapByName(cap.getName()).stream().count()!=0) throw new DuplicateDataException("Сap with that name already exists");
+    public static void update(Cap cap) {
+        if (!findCapById(cap.getId()).get(0).getName().equals(cap.getName()) && findCapByName(cap.getName()).stream().count() != 0)
+            throw new DuplicateDataException("Сap with that name already exists");
         CapRepository.update(cap);
     }
 

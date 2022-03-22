@@ -16,7 +16,7 @@ public class AllShipsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("All", ShipService.getAll());
-        RequestDispatcher rd = request.getRequestDispatcher("jsp/AllShipsManager.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("pages/AllShipsManager.jsp");
         rd.forward(request, response);
     }
 }

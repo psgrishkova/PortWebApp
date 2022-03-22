@@ -12,7 +12,7 @@ public class PriceList {
 
     public PriceList(Long id, String name, List<PriceDto> priceList) {
         this.id = id;
-        this.name=name;
+        this.name = name;
         this.priceList = priceList;
     }
 

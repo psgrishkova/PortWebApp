@@ -8,8 +8,10 @@ import java.util.List;
 
 public class ShipService {
     public static void add(Ship s) {
-        if(findShipByName(s.getName()).stream().count()!=0) throw new DuplicateDataException("Ship with that name already exists");
-        if(findShipByNum(s.getRegNumber()).stream().count()!=0) throw new DuplicateDataException("Ship with that registration number already exists");
+        if (findShipByName(s.getName()).stream().count() != 0)
+            throw new DuplicateDataException("Ship with that name already exists");
+        if (findShipByNum(s.getRegNumber()).stream().count() != 0)
+            throw new DuplicateDataException("Ship with that registration number already exists");
         ShipRepository.add(s);
     }
 
@@ -17,9 +19,11 @@ public class ShipService {
         ShipRepository.delete(id);
     }
 
-    public static void update(Ship s){
-        if(!findShipById(s.getId()).get(0).getName().equals(s.getName()) && findShipByName(s.getName()).stream().count()!=0) throw new DuplicateDataException("Ship with that name already exists");
-        if(!findShipById(s.getId()).get(0).getRegNumber().equals(s.getRegNumber()) && findShipByNum(s.getRegNumber()).stream().count()!=0) throw new DuplicateDataException("Ship with that registration number already exists");
+    public static void update(Ship s) {
+        if (!findShipById(s.getId()).get(0).getName().equals(s.getName()) && findShipByName(s.getName()).stream().count() != 0)
+            throw new DuplicateDataException("Ship with that name already exists");
+        if (!findShipById(s.getId()).get(0).getRegNumber().equals(s.getRegNumber()) && findShipByNum(s.getRegNumber()).stream().count() != 0)
+            throw new DuplicateDataException("Ship with that registration number already exists");
         ShipRepository.update(s);
     }
 
