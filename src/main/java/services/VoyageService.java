@@ -8,19 +8,23 @@ import repositories.VoyageRepository;
 import java.util.List;
 
 public class VoyageService {
-    public static void add(Voyage voyage){
-        if(VoyageRepository.findCapsIdByVoyageDate(voyage.getDate()).contains(voyage.getCapId())) throw new DuplicateDataException("This captain is already on the voyage at this time");
-        if(VoyageRepository.findShipsIdByVoyageDate(voyage.getDate()).contains(voyage.getShipId())) throw new DuplicateDataException("This ship is already on the voyage at this time");
+    public static void add(Voyage voyage) {
+        if (VoyageRepository.findCapsIdByVoyageDate(voyage.getDate()).contains(voyage.getCapId()))
+            throw new DuplicateDataException("This captain is already on the voyage at this time");
+        if (VoyageRepository.findShipsIdByVoyageDate(voyage.getDate()).contains(voyage.getShipId()))
+            throw new DuplicateDataException("This ship is already on the voyage at this time");
         VoyageRepository.add(voyage);
     }
 
-    public static void delete(Long id){
+    public static void delete(Long id) {
         VoyageRepository.delete(id);
     }
 
-    public static void update(Voyage voyage){
-        if(!VoyageRepository.findVoyageById(voyage.getId()).get(0).getCapId().equals(voyage.getCapId()) && VoyageRepository.findCapsIdByVoyageDate(voyage.getDate()).contains(voyage.getCapId())) throw new DuplicateDataException("This captain is already on the voyage at this time");
-        if(!VoyageRepository.findVoyageById(voyage.getId()).get(0).getShipId().equals(voyage.getShipId()) && VoyageRepository.findShipsIdByVoyageDate(voyage.getDate()).contains(voyage.getShipId())) throw new DuplicateDataException("This ship is already on the voyage at this time");
+    public static void update(Voyage voyage) {
+        if (!VoyageRepository.findVoyageById(voyage.getId()).get(0).getCapId().equals(voyage.getCapId()) && VoyageRepository.findCapsIdByVoyageDate(voyage.getDate()).contains(voyage.getCapId()))
+            throw new DuplicateDataException("This captain is already on the voyage at this time");
+        if (!VoyageRepository.findVoyageById(voyage.getId()).get(0).getShipId().equals(voyage.getShipId()) && VoyageRepository.findShipsIdByVoyageDate(voyage.getDate()).contains(voyage.getShipId()))
+            throw new DuplicateDataException("This ship is already on the voyage at this time");
         VoyageRepository.update(voyage);
     }
 

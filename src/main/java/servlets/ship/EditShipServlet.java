@@ -33,7 +33,7 @@ public class EditShipServlet extends HttpServlet {
             ShipService.update(new Ship(id, num, name, capacity));
 
             response.sendRedirect("/PortWebApp/AllShipsServlet");
-        }catch (Exception e){
+        } catch (Exception e) {
             request.setAttribute("err", e.getMessage());
             doGet(request, response);
         }

@@ -1,9 +1,13 @@
 package servlets.route;
+
 import services.RouteService;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "AllRoutesServlet", value = "/AllRoutesServlet")
@@ -13,11 +17,10 @@ public class AllRoutesServlet extends HttpServlet {
         try {
             request.setAttribute("All", RouteService.getAll());
 
-        }catch (Exception e){
+        } catch (Exception e) {
             request.setAttribute("err", e.getMessage());
-        }
-        finally {
-            RequestDispatcher rd = request.getRequestDispatcher("jsp/AllRoutesAManager.jsp");
+        } finally {
+            RequestDispatcher rd = request.getRequestDispatcher("pages/AllRoutesAManager.jsp");
             rd.forward(request, response);
         }
     }

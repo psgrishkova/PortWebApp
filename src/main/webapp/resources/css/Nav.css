@@ -2,28 +2,31 @@ ul {
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем отступы*/
     padding-left: 0; /*убираем отступы*/
-    background:#ED2553; /*добавляем фон всему меню*/
+    background: #ED2553; /*добавляем фон всему меню*/
     height: 50px; /*задаем высоту*/
     border-radius: 40px;
 }
+
 .a {
     text-decoration: none; /*убираем подчеркивание текста ссылок*/
-    background:#ED2553; /*добавляем фон к пункту меню*/
-    color:#ffffff; /*меняем цвет ссылок*/
-    padding:0px 15px; /*добавляем отступ*/
+    background: #ED2553; /*добавляем фон к пункту меню*/
+    color: #ffffff; /*меняем цвет ссылок*/
+    padding: 0px 15px; /*добавляем отступ*/
     font-family: arial; /*меняем шрифт*/
-    line-height:50px; /*ровняем меню по вертикали*/
+    line-height: 50px; /*ровняем меню по вертикали*/
     display: block;
     border-right: 1px solid #ffffff; /*добавляем бордюр справа*/
     -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
     -o-transition: all 0.3s 0.01s ease;
     -webkit-transition: all 0.3s 0.01s ease;
 }
+
 .a:hover {
-    background:#ffffff;/*добавляем эффект при наведении*/
+    background: #ffffff; /*добавляем эффект при наведении*/
     color: #ED2553;
 }
+
 li {
-    float:left; /*Размещаем список горизонтально для реализации меню*/
-    position:relative; /*задаем позицию для позиционирования*/
+    float: left; /*Размещаем список горизонтально для реализации меню*/
+    position: relative; /*задаем позицию для позиционирования*/
 }

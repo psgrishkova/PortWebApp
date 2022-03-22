@@ -1,8 +1,5 @@
 package models;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-
 public class Route {
     private Long id;
     private String name;

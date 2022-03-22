@@ -9,7 +9,7 @@
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
 
-    <link rel="stylesheet" href="<c:url value='/resources/css/Ship.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/General.css' />"/>
 </head>
 <body>
 <c:if test="${err!=null}">
@@ -39,15 +39,19 @@
 
             <div class="button login">
                 <button style="width: 50%" type="submit">GO</button>
-                <button style="width: 50%" onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllRoutesServlet';">Cancel</button>
+                <button style="width: 50%"
+                        onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllRoutesServlet';">Cancel
+                </button>
             </div>
         </form>
 
     </div>
 </div>
 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="../js/Ship.js"></script>
+<script src='<c:url value="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"/> '></script>
+<script type="text/javascript">
+    <%@include file="../js/Effects.js"%>
+</script>
 
 </body>
 </html>

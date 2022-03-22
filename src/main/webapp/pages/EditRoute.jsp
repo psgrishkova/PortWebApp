@@ -8,9 +8,8 @@
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
-    <link rel="stylesheet" href="<c:url value='/resources/css/Ship.css' />"/>
-    <link rel="stylesheet" href="<c:url value='../resources/css/AllShips.css' />"/>
-    <link rel="stylesheet" href="<c:url value='/resources/css/EditShip.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/General.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/Label.css' />"/>
 </head>
 
 <body>
@@ -34,7 +33,7 @@
                 <label for="name">Name</label>
 
                 <div class="input">
-                    <input type="text" name="from" id="from" value="${p.from}"required>
+                    <input type="text" name="from" id="from" value="${p.from}" required>
                     <span class="spin"></span>
                 </div>
                 <label for="from">From</label>
@@ -46,7 +45,9 @@
                 <label for="to">To</label>
                 <div class="button login">
                     <button style="width: 50%" type="submit">GO</button>
-                    <button style="width: 50%" onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllRoutesServlet';">Cancel</button>
+                    <button style="width: 50%"
+                            onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllRoutesServlet';">Cancel
+                    </button>
                 </div>
             </form>
         </c:forEach>

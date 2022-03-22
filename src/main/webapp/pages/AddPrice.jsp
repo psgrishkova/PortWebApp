@@ -8,13 +8,12 @@
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
-    <link rel="stylesheet" href="<c:url value='/resources/css/Voyage.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/Select.css' />"/>
     <link rel="stylesheet" href="<c:url value='/resources/css/Price.css' />"/>
-    <link rel="stylesheet" href="<c:url value='/resources/css/AllShips.css' />"/>
-    <link rel="stylesheet" href="<c:url value='/resources/css/EditShip.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/Label.css' />"/>
 </head>
 
-<body>
+<body style="height: 100%; overflow:auto;">
 <c:if test="${err!=null}">
     <script>
         prompt("Check your data", "${err}");
@@ -24,7 +23,7 @@
     <div class="box">
         <form action="/PortWebApp/AddPriceServlet" method="post">
             <div class="title">Add price</div>
-            <div >
+            <div>
                 <select class="s" name="route" id="route">
                     <c:forEach items="${getAllRoutes}" var="r">
                         <option value="${r.id}">${r.name}</option>
@@ -50,10 +49,11 @@
             <label for="price" style="padding-bottom: 10px">Price</label>
 
 
-
             <div class="button login">
                 <button style="width: 50%" type="submit">GO</button>
-                <button style="width: 50%" onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllPricesServlet';">Cancel</button>
+                <button style="width: 50%"
+                        onclick="window.location.href = 'http://localhost:8080/PortWebApp/AllPricesServlet';">Cancel
+                </button>
             </div>
         </form>
 

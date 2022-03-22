@@ -3,7 +3,6 @@ package servlets.cap;
 import models.Cap;
 import services.CapService;
 
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,8 +29,7 @@ public class AddCapServlet extends HttpServlet {
             CapService.add(s);
 
             response.sendRedirect("/PortWebApp/AllCapsServlet");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             request.setAttribute("err", e.getMessage());
             doGet(request, response);
         }
